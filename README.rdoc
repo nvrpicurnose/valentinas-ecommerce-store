@@ -1,28 +1,8 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Online eCommerce Store for small business, originally developed for Valentinas (Jeans&Apparel).
+Unique features of this website include a Fashion Model Submission form where customers who buy Jeans can submit their own pictures to be shown on the front page as a "model".
+Social media driven advertising is used for "models" to link their own photos to friends.
+Small business owners can edit the layout of their products on the site without developer aid, via a simple custom built GUI made with the help of Ruby Gem acts_as_list.
+Auto-email feature is triggered whenever certain events occur. Admins and users are notified via ActionMailer Gmail.
+Payments are handled through ActiveMerchant via. Paypal. 
