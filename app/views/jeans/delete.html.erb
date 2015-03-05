@@ -1,0 +1,18 @@
+<% @page_title = "Delete jean" %>
+
+
+<div class="jeans delete">
+  <h2>Delete Jean Model</h2>
+
+  <%= form_for(:jean, :url => {:action => 'delete', :id => @jean.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this Jean Model?</p>
+
+    <p class="reference-name"><%= @jean.title %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete Jean Model", {:action => 'delete', :id => @jean.id}) %>
+    </div>
+
+  <% end %>
+</div>

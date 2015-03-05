@@ -1,0 +1,15 @@
+<br />
+<% @page_title = "submits" %>
+
+<div class="submits index">
+    <% @submits.each do |submit| %>
+      	<div class="box"> 
+	        <%= link_to image_tag(submit.image(:medium)), {:action=>'show', :id=>submit.id} %><br/>
+	        <p><%= submit.name %></p>
+	        <p><%= submit.location %></p>
+	        <p><%= submit.email%></p>
+	        <p><%= submit.review%></p>
+	        <p>Submitted on <%= submit.created_at %> </p>
+    	</div>
+    <% end %>
+</div>

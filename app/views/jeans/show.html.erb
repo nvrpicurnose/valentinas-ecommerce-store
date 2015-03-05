@@ -1,0 +1,25 @@
+<% @page_title = "Show jean" %>
+<br />
+<div class='center'>
+<div class="showr">
+  <h2><%= @jean.title %></h2>
+    $<%= @jean.price %>
+  <h4>Sizes</h4>
+    <td><%= @jean.size %></td>
+  <h4>Description</h4>
+    <%= @jean.description %>
+  <% if admin_signed_in? %>
+    <h4>Last Updated</h4>
+  <% @jean.updated_at %>
+    <h4>Position</h4>
+  <%= @jean.position %>
+    <%= link_to("Edit", {:action => 'edit', :id => @model.id}, :class => 'action edit') %><br /><br /><br />
+    <%= button_to("Delete", model_path(@model.id), :method=>'delete', :confirm=>'Are you sure you want to delete this?')%>
+  <% end %>
+</div>
+
+<div class='imgr'>
+  <%= image_tag @jean.image.url(:medium) %>
+</div>
+</div>
+

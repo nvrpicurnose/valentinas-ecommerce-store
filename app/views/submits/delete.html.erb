@@ -1,0 +1,18 @@
+<% @page_title = "Delete submit" %>
+
+
+<div class="submits delete">
+  <h2>Delete submit</h2>
+
+  <%= form_for(:submit, :url => {:action => 'delete', :id => @submit.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this submission?</p>
+
+    <p class="reference-name"><%= @submit.name %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete submission", {:action => 'delete', :id => @submit.id}) %>
+    </div>
+
+  <% end %>
+</div>

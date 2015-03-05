@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "jeans" %>
+<% @page_title = "Jeans" %>
+
+<div class="jeans index">
+  <% if admin_signed_in? %>
+    <%= link_to("Add New Jean Model", {:action => 'new'}, :class => 'action new') %>
+  <% end %>
+</div>
+
+
+      <% @jeans.each do |jean| %>
+        <div class="box"> 
+          <%= link_to image_tag(jean.image(:medium)), {:action=>'show', :id=>jean.id} %><br/>
+          <h2><%= link_to(jean.title,{:action=>'show', :id=>jean.id}, :class => 'action show')%></h2>
+          <p>$<%= jean.price %></p>
+          <% if admin_signed_in? %>
+            <p><%= jean.position %></p>
+          <% end %>
+        </div>
+      <% end %>

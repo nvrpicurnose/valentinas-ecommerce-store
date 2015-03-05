@@ -1,0 +1,16 @@
+<% @page_title = "New model" %>
+
+
+<div class="models new">
+  <h2>Add New Model</h2>
+
+  <%= form_for(:model, :url => {:action => 'create'}, :html=>{:multipart=>true}) do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Create Model") %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,59 @@
+Hard Things to Implement:
+1. credit card payment system
+2. auto email system http://railscasts.com/episodes/206-action-mailer-in-rails-3 [done]
+3. track your order 
+
+Easy Things to Implement:
+1. client requested pages [in progress, awaiting]
+2. user accounts [in progress, awaiting]
+3. test if mailer works with non-gmail accounts [done]
+4. add a footer [done]
+5. index display text inline 
+6. contents centered [done]
+
+Things to Fix:
+1. flash messages should display neatly [done]
+2. remigrate models to include an email attribute, currenly using location [done]
+3. models/jeans delete goes to the submit controller instead of its own [done]
+4. models/jeans should have a confirmation
+5. fix mailer, worked before but now not mailing anymore! [done]
+6. remigrate jeans to include size attribute [done]
+
+------------------------
+
+Admin Logins:
+test_user@email.com
+password
+
+User Logins:
+test_user2@email.com
+password
+
+Gmail Login:
+noreply.valentinas@gmail.com
+riosdenim
+born: Feb 21 2000
+
+Paypal Login:
+noreply.valentinas@gmail.com
+riosdenim1995
+Q1: St Lawrence of Rome
+Q2: Ass Breakfeast Lunch and Dinner
+
+
+------------------------
+
+Client Requested Features:
+1. Contact Page [awaiting]
+2. Wholesale inquries [awaiting]
+3. Product Care page [awaiting]
+4. Size Chart [awaiting]
+5. Designs Page [awaiting]
+6. Track your order page 
+7. Navigation bar bring down, keep logo above it [done]
+8. Custom logo background above nav bar [done]
+9. Subscribe to our newsletter
+10. User accounts
+11. bottom footer nav [done]
+
+

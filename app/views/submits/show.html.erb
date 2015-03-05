@@ -1,0 +1,39 @@
+
+<h1> WARNING: Before editing submission, be sure to save the images. </h1>
+<h2> If you leave the image file field blank, the current image will remain </h2>
+<h2> ----------------------------------------------</h2>
+
+
+<% @page_title = "Show submit" %>
+
+
+<div class="submits show">
+  <h2><%= @submit.title %></h2>
+  <%= image_tag @submit.image.url(:medium) %>
+  <br />
+  <br />
+  <table summary="submit detail view">
+  <td width="40%"></td>
+    <tr>
+      <th>Name</th>
+      <td><%= @submit.name %></td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td><%= @submit.location %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @submit.email %></td>
+    </tr>
+    <tr>
+      <th>Review</th>
+      <td><%= @submit.review %></td>
+    </tr>
+    <td class="actions">
+      <%= link_to("Edit", {:action => 'edit', :id => @submit.id}, :class => 'action edit') %>
+      <%= link_to("Delete", {:action => 'delete', :id => @submit.id}, :class => 'action delete')%>
+    </td>
+  </table>
+
+</div>

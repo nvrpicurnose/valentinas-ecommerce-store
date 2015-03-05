@@ -1,0 +1,36 @@
+<% if @jean.errors.any? %>
+  <ul>
+    <% @jean.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+      <% end %>
+    </li>
+  </ul>
+  <% end %>
+<br />
+<table class="center">
+  <tr>
+    <th><%= f.label(:title, "Model") %></th>
+    <td><%= f.text_field(:title) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:price) %></th>
+    <td><%= f.text_field(:price) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:size, "Sizes") %></th>
+    <td><%= f.text_field(:size) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:description) %></th>
+    <td><%= f.text_area(:description) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:image) %></th>
+    <th><%= f.file_field :image %></th>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..10) %></td>
+  </tr>
+</table>

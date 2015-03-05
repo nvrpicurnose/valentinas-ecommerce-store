@@ -1,0 +1,25 @@
+<div class="admin controls">
+  <h2>Admin Controls</h2>
+  <table class="center">
+  <td width="40%"></td>
+    <tr>
+      <th>Models Queue</th>
+      <td><%= link_to("Manage Submissions", submits_path) %></td>
+    </tr>
+    <tr>
+      <th>Add New Model</th>
+      <td><%= link_to("Add", new_model_path) %></td>
+    </tr>
+    <tr>
+      <th>Add New Product</th>
+      <td><%= link_to("Add", new_jeans_path) %></td>
+    </tr>
+    <tr>
+      <th>Log Out<th>
+      <td><%= link_to("Log Out", destroy_admin_session_path, :method=>:delete) %><td>
+    </tr>
+  </table>
+</div>
+
+<br />
+<p>Note: When logged onto an Admin account, you can edit or delete individual models/jeans/submissions by clicking their descriptions</p>

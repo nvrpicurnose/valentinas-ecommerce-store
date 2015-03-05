@@ -1,0 +1,43 @@
+<% if @submit.errors.any? %>
+  <ul>
+    <% @submit.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+    <% end %>
+    </li>
+  </ul>
+<% end %>
+
+<br />
+<form class="form-horizontal">
+<div class="form-box">
+  <div class='form-group'>
+    <%= f.label(:title, "Jean Model ") %><br />
+    <%= f.select(:title, Jean.all.collect {|a| [a.title]}, :class=>"textbox") %>
+  </div>
+  <div class='form-group'>
+    <%= f.label(:name) %><br />
+    <%= f.text_field(:name, :class=>"textbox") %>
+  </div>
+  <div class='form-group'>
+    <%= f.label(:location) %><br />
+    <%= f.text_field(:location, :class=>"textbox") %>
+  </div>
+  <div class='form-group'>
+    <%= f.label(:email) %><br />
+    <%= f.text_field(:email, :class=>"textbox") %>
+  </div>
+  <div class='form-group'>
+    <%= f.label(:review) %><br />
+    <%= f.text_area(:review, :class=>'textbox') %>
+  </div>
+  <div class='form-group'>
+    <%= f.label(:image) %><br />
+    <%= f.file_field :image %>
+  </div>
+  <div class='form-group'>
+    <%= f.check_box(:agree) %>
+    <%= f.label(:agree, "I agree to the terms and conditions for usage of my uploaded image") %>
+  </div>
+</div>
+</form>

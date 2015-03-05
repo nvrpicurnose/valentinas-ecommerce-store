@@ -1,0 +1,16 @@
+<% @page_title = "Update submit" %>
+
+
+<div class="submits edit">
+  <h2>Edit submission</h2>
+
+  <%= form_for @submit do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update submission") %>
+    </div>
+
+  <% end %>
+</div>

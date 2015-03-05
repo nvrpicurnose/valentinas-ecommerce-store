@@ -1,0 +1,42 @@
+<% if @model.errors.any? %>
+  <ul>
+    <% @model.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+      <% end %>
+    </li>
+  </ul>
+  <% end %>
+
+<br />
+<table class="center">
+  <tr>
+    <th align="left"><%= f.label(:title, "Jean Modelled") %></th>
+    <td><%= f.select(:title, Jean.all.collect {|a| [a.title]}) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:name) %></th>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:email) %></th>
+    <td><%= f.text_field(:email) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:location) %></th>
+    <td><%= f.text_field(:location) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:review) %></th>
+    <td><%= f.text_area(:review) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:image) %></th>
+    <th><%= f.file_field :image %></th>
+  </tr>
+  <tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..10) %></td>
+  </tr>
+</table>

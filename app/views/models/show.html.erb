@@ -1,0 +1,28 @@
+<br />
+<% @page_title = "Show model" %>
+
+<div class='center'>
+<div class="showr">
+  <blockquote>
+  <h2><%= @model.title %></h2>
+    <%= @model.name %><br />
+    from <%= @model.location %>
+  <br />
+  <h4>Review</h4>
+    <td><%= @model.review %></td>
+  <% if admin_signed_in? %>
+    <h4>Email</h4>
+      <%= @model.email %>
+    <h4>Position</h4>
+      <%= @model.position %>
+    <%= link_to("Edit", {:action => 'edit', :id => @model.id}, :class => 'action edit') %><br /><br /><br />
+    <%= button_to("Delete", model_path(@model.id), :method=>'delete', :confirm=>'Are you sure you want to delete this?')%>
+  <% end %>
+</blockquote>
+</div>
+
+<div class='imgr'>
+  <%= image_tag @model.image.url(:medium) %>
+</div>
+</div>
+

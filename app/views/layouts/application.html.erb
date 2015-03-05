@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<%= image_tag('/images/banner.jpg')  %>
+<head>
+
+  <title>Valentinas</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<br />
+<br />
+  <% #to check out the source code, visit https://github.com/bootstrap-ruby/bootstrap-navbar/wiki/Usage-with-Bootstrap-3.x %>
+<nav class="navbar navbar-fluid-top navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Valentinas</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapsable">
+      <ul class="nav navbar-nav navbar-center" align="right">
+        <li><%= link_to("Home", models_path, :class => 'action show')%></li>
+        <li><%= link_to("Products", jeans_index_path, :class => 'action show')%></li>
+        <li><%= link_to("Model for Us", new_submit_path, :class => 'action new')%></li>
+        <li><%= link_to("About Us", aboutus_path, :class => 'action show')%></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" align="right">
+        <li><% unless user_signed_in? %>
+              <%= link_to("Log In | Sign Up", new_user_session_path) %>
+            <% else %>
+              <%= link_to("Profile", profile_path) %>
+            <% end %>
+        </li>
+        <li><% if admin_signed_in? %>
+              <%= link_to("Admin Controls", admin_controls_path)%>
+            <% end %></li>
+        <li>
+          <a href="Abouts/aboutus">
+            <span class='glyphicon glyphicon-shopping-cart'></span>
+            Checkout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<% if notice.present? %>
+  <div class="alert alert-dismissible alert-warning">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <h2>Notice</h2>
+    <p class="notice"><%= notice %></p>
+  </div>
+<% end %>
+	<%= yield %>
+</body>
+<br />
+<br />
+<br />
+<br />
+<nav class="footer" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="footer" id="navbar-collapsable">
+      <ul class="nav navbar-nav navbar-center" align="center">
+        <li><%= link_to("Designs", aboutus_path, :class => 'action show')%></li>
+        <li><%= link_to("Product Care", aboutus_path, :class => 'action show')%></li>
+        <li><%= link_to("Sizing Chart", aboutus_path, :class => 'action show')%></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" align="right">
+        <li><%= link_to("Track Your Order", aboutus_path, :class => 'action show')%></li>
+        <li><%= link_to("Bulk Purchase", aboutus_path, :class => 'action show')%></li>
+      </ul>
+    </div>
+</nav>
+</html>
+
